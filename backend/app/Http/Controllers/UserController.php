@@ -16,4 +16,12 @@ class UserController extends Controller
         $user->save();
         return $user;
     }
+
+    function login(Request $request){
+        $user = User::where('email',$request->email)->first();
+        if(!$user || !Hash::check($request->password,$user->password)){
+            return ["error" => "Email or password is not matched"];
+        }
+        return $user;
+    }
 }
