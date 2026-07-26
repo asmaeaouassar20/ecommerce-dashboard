@@ -1,13 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router";
 
 export default function Register() {
+
+    const navigate=useNavigate();
+
+    useEffect(()=>{
+        if(localStorage.getItem('user-info')){
+            navigate('/add');
+        }
+    } , [])
 
     const [name,setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const navigate = useNavigate();
 
     async function signup(){
         let item = {name,email,password}

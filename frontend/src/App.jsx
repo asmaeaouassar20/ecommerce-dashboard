@@ -4,8 +4,9 @@ import './App.css'
 import Header from './components/Header';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
-import AddProduct from './components/product/AddProduct';
+import Protected from './components/product/Protected';
 import ListProducts from './components/product/ListProducts';
+import AddProduct from './components/product/AddProduct';
 
 function App() {
 
@@ -17,8 +18,8 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/add' element={<AddProduct />} />
-          <Route path='/' element={<ListProducts />} />
+          <Route path='/add' element={<Protected Composant={AddProduct} />} />
+          <Route path='/' element={<Protected Composant={ListProducts} />} />          
         </Routes>
       </BrowserRouter>
       <Outlet />

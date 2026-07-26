@@ -11,9 +11,15 @@ export default function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                    <Nav.Link as={Link} to="/register">Register</Nav.Link>
-                    <Nav.Link as={Link} to="/add">Add Product</Nav.Link>                  
+                    {
+                        localStorage.getItem('user-info') ?
+                            <Nav.Link as={Link} to="/add">Add Product</Nav.Link>
+                            :
+                            <>
+                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                <Nav.Link as={Link} to="/register">Register</Nav.Link>
+                            </>
+                    }
                 </Nav>
             </Navbar.Collapse>
         </Container>
