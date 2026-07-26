@@ -13,6 +13,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->file_path = $request->file('product-photo')->store('products');
+        dd($product);
         $product->save();
         return $request->input();
     }
