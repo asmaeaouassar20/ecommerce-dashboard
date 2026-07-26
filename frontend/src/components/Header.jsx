@@ -22,7 +22,10 @@ export default function Header() {
                 <Nav className="me-auto">
                     {
                         localStorage.getItem('user-info') ?
+                            <>
                             <Nav.Link as={Link} to="/add">Add Product</Nav.Link>
+                            <Nav.Link as={Link} to="/">List of products</Nav.Link>
+                            </>
                             :
                             <>
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
