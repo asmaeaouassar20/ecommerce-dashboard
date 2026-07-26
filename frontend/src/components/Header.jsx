@@ -1,10 +1,19 @@
+import { NavDropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 
 export default function Header() {
+    let user = JSON.parse(localStorage.getItem('user-info'));
+    const navigate=useNavigate();
+
+    function logout(){
+        localStorage.clear();
+        navigate('/login');
+    }
+
     return <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
             <Nav.Link as={Link} to="/">E-commerce Dashboard</Nav.Link>
@@ -21,6 +30,11 @@ export default function Header() {
                             </>
                     }
                 </Nav>
+               {
+                localStorage.getItem('user-info') &&  <NavDropdown title={user && user.name} id="nav-dropdown">
+                    <NavDropdown.Item eventKey="4.1" onClick={logout}>Logout</NavDropdown.Item>                    
+                </NavDropdown>
+               }
             </Navbar.Collapse>
         </Container>
     </Navbar>
