@@ -20,7 +20,7 @@ export default function AddProduct() {
         console.log(result.status);
 
         const text = await result.text();
-        console.log(text);
+        alert(text)
     }
 
     return <div>
