@@ -21,4 +21,14 @@ class ProductController extends Controller
     function list(){
         return Product::all();
     }
+
+
+    function delete($id){
+        $res = Product::where('id' , $id)->delete();
+        if($res){
+            return ["result" => "product has been deleted"];
+        }else{
+            return ["result" => "operation failed"];
+        }
+    }
 }
