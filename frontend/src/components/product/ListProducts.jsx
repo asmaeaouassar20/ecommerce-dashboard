@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Table } from "react-bootstrap";
+import { Link } from "react-router";
 
 export default function ListProducts() {
 
@@ -45,7 +46,12 @@ export default function ListProducts() {
                             <td>{p.price}</td>
                             <td>{p.description}</td>
                             <td><img width={100} src={"http://localhost:8000/storage/" + p.file_path} /></td>
-                            <td><span onClick={() => deleteProduct(p.id)} className="btn btn-danger" >Delete</span></td>
+                            <td>  
+                                <span onClick={() => deleteProduct(p.id)} className="btn btn-danger" >Delete</span>
+                                <Link to={"update/"+p.id}>
+                                    <span className="btn btn-success ms-2" >Update</span>     
+                                </Link>
+                            </td>
                         </tr>)
                     }
                 </tbody>

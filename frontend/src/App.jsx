@@ -7,6 +7,7 @@ import Register from './components/auth/Register';
 import Protected from './components/product/Protected';
 import ListProducts from './components/product/ListProducts';
 import AddProduct from './components/product/AddProduct';
+import UpdateProduct from './components/product/UpdateProduct';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/add' element={<Protected Composant={AddProduct} />} />
+          <Route path='/update/:id' element={<Protected Composant={UpdateProduct} />} />
           <Route path='/' element={<Protected Composant={ListProducts} />} />          
         </Routes>
       </BrowserRouter>
