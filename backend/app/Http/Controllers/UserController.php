@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    function register(Request $request){
+    function register(Request $request){        
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
