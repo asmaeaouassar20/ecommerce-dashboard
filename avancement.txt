@@ -1,0 +1,2 @@
+- add gloabl variable for common link
+- add charts (dashboars)
