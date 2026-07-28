@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Header from '../Header';
 import { useParams } from 'react-router';
+import Header from '../common/Header';
 
 export default function UpdateProduct(){
     const {id} = useParams();

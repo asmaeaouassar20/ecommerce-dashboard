@@ -1,7 +1,7 @@
 
 import { BrowserRouter, Outlet, Routes , Route } from 'react-router';
 import './App.css'
-import Header from './components/Header';
+import Header from './components/common/Header';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Protected from './components/product/Protected';

@@ -1,2 +1,3 @@
 - add gloabl variable for common link
 - add charts (dashboars)
+- colorer les mots de recherche et ajouter le nombre de recherche
