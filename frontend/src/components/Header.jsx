@@ -25,6 +25,7 @@ export default function Header() {
                             <>
                             <Nav.Link as={Link} to="/add">Add Product</Nav.Link>
                             <Nav.Link as={Link} to="/">List of products</Nav.Link>
+                            <Nav.Link as={Link} to="/search">Search product</Nav.Link>
                             </>
                             :
                             <>
